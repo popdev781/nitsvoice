@@ -1,2 +1,4 @@
 # nitsvoice
 nitsvoice.com
+
+mean
