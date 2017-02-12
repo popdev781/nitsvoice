@@ -1,0 +1,24 @@
+{
+  "name": "nitsvoice",
+  "version": "1.0.0",
+  "description": "web project for nitsvoice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/popdev781/nitsvoice.git"
+  },
+  "author": "popdev781",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/popdev781/nitsvoice/issues"
+  },
+  "homepage": "https://github.com/popdev781/nitsvoice#readme",
+  "dependencies": {
+    "angular": "^1.6.2",
+    "express": "^4.14.1",
+    "mongod": "^2.0.0"
+  }
+}
