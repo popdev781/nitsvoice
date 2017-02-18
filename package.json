@@ -2,7 +2,7 @@
   "name": "nitsvoice",
   "version": "1.0.0",
   "description": "web project for nitsvoice",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,7 +17,6 @@
   },
   "homepage": "https://github.com/popdev781/nitsvoice#readme",
   "dependencies": {
-    "angular": "^1.6.2",
     "express": "^4.14.1",
     "mongodb": "^2.2.22"
   }
