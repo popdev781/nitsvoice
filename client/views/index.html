@@ -11,11 +11,12 @@
 			<ul>
 			<li ng-repeat= "meetup in meetups" > {{ meetup.name }} </li>
 			</ul>		
-		</div>
 		<form ng-submit="createMeetup()">
 		<input type="text" placeholder="Meetup name" ng-model="meetupName" ></input>
-		<button type="submit" ng-click="createMeetup()">Add </button>
+		<button type="submit" >Add </button>
 		</form>
+		
+		</div>
 		
 	</body>
 	

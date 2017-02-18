@@ -7,7 +7,7 @@ app.controller('meetupsController', ['$scope', function($scope){
 	];
 	console.log("blah");
 	$scope.createMeetup = function() {
-		console.log("blah-blah");
+		// console.log("blah-blah");
 		$scope.meetups.push({ name: $scope.meetupName });
 		$scope.meetupName = "";
 	};
