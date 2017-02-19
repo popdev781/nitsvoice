@@ -1,11 +1,21 @@
 
 
 var express = require('express');  //load express module
-var app = express();
-var meetupController = require('./server/controllers/meetups-controller.js');
-var bodyParser = require('body-parser');
-
+var app = express(); // server
 var appPORT = 3000;
+var meetupController = require('./server/controllers/meetups-controller.js');
+var bodyParser = require('body-parser');  // body parser to parser json request data
+var MongoClient = require('mongodb').MongoClient;  // mongoclient to connect to Mongodb
+var assert = require('assert');  // error handling module
+var dbServer = "localhost";
+var dbPORT = 27017;
+var dbName = 'mean-demo';
+var url = 'mongodb://' + dbServer + ':' + dbPORT + '/dbName';
+
+MongoClient.connect(url, function(err, db){
+	assert.equal(null, err);
+	console.log('Connected to mongodb');
+});
 
 app.use(bodyParser.json());
 
