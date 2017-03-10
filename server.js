@@ -11,9 +11,9 @@ var dbServer = "localhost";
 var dbPORT = 27017;
 var dbName = 'mean-demo';
 var url = 'mongodb://' + dbServer + ':' + dbPORT + '/' +dbName;
+var collectionName = 'meetups';
 
 var findMeetups = function(db, callback) {
-  var collectionName = 'meetups';
   var cursor = db.collection(collectionName).find({});
   cursor.each(function(err, doc) {
     assert.equal(null, err);
