@@ -12,9 +12,26 @@ var dbPORT = 27017;
 var dbName = 'mean-demo';
 var url = 'mongodb://' + dbServer + ':' + dbPORT + '/' +dbName;
 
+var findMeetups = function(db, callback) {
+  var collectionName = 'meetups';
+  var cursor = db.collection(collectionName).find({});
+  cursor.each(function(err, doc) {
+    assert.equal(null, err);
+    if(doc != null) {
+      console.dir(doc);
+    } else {
+      callback();
+    }
+  });
+};
+
+
 MongoClient.connect(url, function(err, db){
 	assert.equal(null, err);
 	console.log('Connected to mongodb on ', url);
+  findMeetups(db, function(){
+    db.close();
+  });
 });
 
 app.use(bodyParser.json());
