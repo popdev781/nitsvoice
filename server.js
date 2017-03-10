@@ -10,11 +10,11 @@ var assert = require('assert');  // error handling module
 var dbServer = "localhost";
 var dbPORT = 27017;
 var dbName = 'mean-demo';
-var url = 'mongodb://' + dbServer + ':' + dbPORT + '/dbName';
+var url = 'mongodb://' + dbServer + ':' + dbPORT + '/' +dbName;
 
 MongoClient.connect(url, function(err, db){
 	assert.equal(null, err);
-	console.log('Connected to mongodb');
+	console.log('Connected to mongodb on ', url);
 });
 
 app.use(bodyParser.json());
