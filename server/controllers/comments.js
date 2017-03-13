@@ -1,15 +1,20 @@
 var express = require('express');
-var router = express.router;
+var router = express.Router();
 
-var db = require('../db');
+var Comments = require('../models/comments');
 
 router.get('/all', function(req, res) {
+    Comments.all(function(err, docs) {
+        res.setHeader('Content-Type', 'application/json');
+        res.send(JSON.stringify({ comments: docs }));  
+    });
+});
 
-    // comments collection from mongodb
-    var collection = db.get().collection('comments');
-
-    collection.find().toArray(function(err, docs) {
+router.get('/recent', function(req, res) {
+    Comments.recent(function(err, docs) {
         res.setHeader('Content-Type', 'application/json');
         res.send(JSON.stringify({ comments: docs }));
-    })
+    });
 });
+
+module.exports = router;

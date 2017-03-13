@@ -24,8 +24,8 @@ db.connect(url, function(err) {
     }
 });
 
-app.use('/comments', require('./controllers/comments'));
-app.use('/users', require('./controllers/users'));
+app.use('/comments', require('./server/controllers/comments.js'));
+// app.use('/users', require('./server/controllers/users.js'));
 
 /*
 var findMeetups = function(db, callback) {
