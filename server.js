@@ -23,6 +23,10 @@ db.connect(url, function(err) {
         });
     }
 });
+
+app.use('/comments', require('./controllers/comments'));
+app.use('/users', require('./controllers/users'));
+
 /*
 var findMeetups = function(db, callback) {
     var cursor = db.collection(collectionName).find({});
