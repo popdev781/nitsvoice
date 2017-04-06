@@ -1,15 +1,13 @@
 var db = require('../db');
 
-exports.all = function(cb) {
+exports.all = function(callback) {
     var collection = db.get().collection('comments');
 
     var all_data = collection.find({}, { _id: 0 });
-    // console.log(all_data);
-    console.log(typeof(all_data));
-    // console.log(all_data.toArray()[0]);  // not working
+    // console.log(typeof(all_data));
 
     all_data.toArray(function(err, docs) {
-        cb(err, docs);
+        callback(err, docs);
     });
 }
 

@@ -8,12 +8,23 @@ router.get('/all', function(req, res) {
         res.setHeader('Content-Type', 'application/json');
 
         // testing again here
-        console.log(docs);
-        console.log(docs[0].value);
-        console.log(typeof(docs));
+        // console.log(docs);
+        //console.log(docs[0].value);
+        /*
+        count = docs.length;
+        console.log("total values = ", count);
+        docs.forEach(function(element) {
+            console.log(element);
+        }, this);
+        */
+        // console.log(typeof(docs[0]));
+        //console.log(typeof(docs));
 
+        // res.send(JSON.stringify({ comments: docs }));
+        
+        // another way to sent JSON data   
+        res.json(docs);
 
-        res.send(JSON.stringify({ comments: docs }));
     });
 });
 
